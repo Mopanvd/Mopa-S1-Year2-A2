@@ -1,8 +1,8 @@
 :root {
-  --primary-bg-color: #0000FF; /* Changed to blue */
-  --text-color: #333;
+  --primary-bg-color: #545454;
+  --text-color: #44f829;
   --main-bg-color: #333;
-  --main-text-color: #fff;
+  --main-text-color: #9cff32;
   --main-btn-bg-color: #938989;
 }
 
