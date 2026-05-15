@@ -33,6 +33,32 @@ function togglePlayPause() {
     playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/play--v1.png";
   }
 }
+// 全屏切换功能
+function toggleFullScreen() {
+    // 关键点：获取整个播放器容器，而不是单纯的 video 标签
+    const playerContainer = document.querySelector('.media-player');
+
+    // 检查当前是否已经是全屏状态
+    if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+        // 进入全屏 (兼容不同浏览器)
+        if (playerContainer.requestFullscreen) {
+            playerContainer.requestFullscreen();
+        } else if (playerContainer.webkitRequestFullscreen) { /* Safari */
+            playerContainer.webkitRequestFullscreen();
+        } else if (playerContainer.msRequestFullscreen) { /* IE11 */
+            playerContainer.msRequestFullscreen();
+        }
+    } else {
+        // 退出全屏 (兼容不同浏览器)
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) { /* Safari */
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { /* IE11 */
+            document.msExitFullscreen();
+        }
+    }
+}
 
 function updateProgressBar() {
   // Update progress bar in real-time (skip if dragging to avoid conflicts)
@@ -137,7 +163,7 @@ function animateAudioBackground() {
   const highFreq = frequencyData.slice(bandSize * 2).reduce((sum, value) => sum + value, 0) / bandSize;
   
   // Map frequency values (0-255) to RGB values (0-255)
-  const blue = Math.min(255, Math.round(lowFreq * 1.4));
+  const blue = Math.min(255, Math.round(lowFreq * 1.4)); 
   const green = Math.min(255, Math.round(midFreq * 1.7));
   const red = Math.min(255, Math.round(highFreq * 2.2));
   

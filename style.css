@@ -78,6 +78,7 @@ nav a { /* Style navigation links */
 
 .media-player video { /* Ensure the video fills the container and maintains aspect ratio */
   max-width: 100%;
+  height: auto;
 }
 
 .custom-controls { /* Style the custom controls container */
@@ -90,7 +91,7 @@ nav a { /* Style navigation links */
 }
 
 .custom-controls button { /* Style the custom control buttons */
-  background-color: var(--main-btn-bg-color);
+  background-color: rgba(5, 113, 8, 0.509);
   color: var(--main-text-color);
   border: none;
   padding: 8px 12px;
@@ -100,6 +101,15 @@ nav a { /* Style navigation links */
   align-items: center;
 }
 
+#fullscreen-btn{ /* Style the fullscreen button */
+    background: rgba(255,255,255,0.1);
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
 .progress-bar { /* Style the progress bar container */
   width: 100%;
   height: 10px;
