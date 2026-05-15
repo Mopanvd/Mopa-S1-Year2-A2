@@ -18,10 +18,7 @@
     <!-- Navigation Section -->
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Videos</a></li>
-        <li><a href="#">Music</a></li>
-        <li><a href="#">Playlists</a></li>
+        <li><a href="#">Mopa</a></li>
         <!-- Add or remove navigation items as needed -->
       </ul>
     </nav>
@@ -30,7 +27,7 @@
     <main class="container">
       <!-- Media Player Section -->
       <div class="media-player">
-        <video id="custom-video-player" controls crossOrigin="anonymous">
+        <video id="custom-video-player" controls crossOrigin="anonymous" loop>
           <source
             src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4"
             type="video/mp4"
@@ -62,11 +59,26 @@
 
       <!-- Additional Content Section -->
       <section>
-        <h2>Additional Content</h2>
-        <p>This is where you can showcase any other relevant content.</p>
+        <h2>+++++</h2>
+        <p></p>
         <!-- Add more content as needed -->
       </section>
     </main>
+
+    <!-- Video Buttons Section -->
+   <div class="video-buttons">
+        <button class="video-btn" onclick="changeVideo('https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4')">
+          <img src="musicvideo.png" alt="Video 1 Thumbnail" width="100" height="60" />
+        </button>
+        
+        <button class="video-btn" onclick="changeVideo('https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/berry-bunch_handheld-windmill-fan.mp4')">
+          <img src="musicvideo.png" alt="Video 2 Thumbnail" width="100" height="60" />
+        </button>
+        
+        <button class="video-btn" onclick="changeVideo('videoplayback.mp4')"> <!-- video is copyright free from https://www.youtube.com/watch?v=DzYp5uqixz0&list=PLfP6i5T0-DkJPT4dkMAr0PwRq1m25UtoO -->
+          <img src="musicvideo.png" alt="Video 3 Thumbnail" width="100" height="60" />
+        </button>
+    </div>
 
     <!-- Footer Section -->
     <footer>

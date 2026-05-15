@@ -14,7 +14,7 @@ ul {
   padding: 0;
 }
 
-body {
+body { /* this is the video player container */
   font-family: "Arial", sans-serif;
   background-color: var(--primary-bg-color);
   color: var(--text-color);
@@ -25,6 +25,12 @@ body {
   justify-content: space-between;
 }
 
+.media-player video {
+  width: 100%;
+  height: 100%;           /* fill the container */
+  object-fit: contain;    /* maintain aspect ratio */
+  flex-grow: 1;           /* allow the video to grow and fill the container */
+}
 /* Add additional styles as needed */
 
 /* Create a container for the main content */
@@ -49,17 +55,17 @@ nav {
   text-align: center;
 }
 
-nav ul {
+nav ul { /* Use flexbox to arrange navigation items horizontally */
   list-style: none;
   display: flex;
   justify-content: center;
 }
 
-nav ul li {
+nav ul li { /* Add some space between navigation items */
   margin-right: 20px;
 }
 
-nav a {
+nav a { /* Style navigation links */
   text-decoration: none;
   color: var(--text-color);
 }
@@ -70,11 +76,11 @@ nav a {
   margin: 0 auto;
 }
 
-.media-player video {
+.media-player video { /* Ensure the video fills the container and maintains aspect ratio */
   max-width: 100%;
 }
 
-.custom-controls {
+.custom-controls { /* Style the custom controls container */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -83,7 +89,7 @@ nav a {
   width: 100%;
 }
 
-.custom-controls button {
+.custom-controls button { /* Style the custom control buttons */
   background-color: var(--main-btn-bg-color);
   color: var(--main-text-color);
   border: none;
@@ -94,7 +100,7 @@ nav a {
   align-items: center;
 }
 
-.progress-bar {
+.progress-bar { /* Style the progress bar container */
   width: 100%;
   height: 10px;
   background-color: #ddd;
@@ -102,7 +108,7 @@ nav a {
   overflow: hidden;
 }
 
-.progress-bar span {
+.progress-bar span { /* Style the progress bar fill */
   display: block;
   height: 100%;
   background-color: var(--main-bg-color);
@@ -110,9 +116,31 @@ nav a {
   transition: width 0.3s ease;
 }
 
+.video-buttons {
+  display: flex; /* Use flexbox to arrange buttons horizontally */
+  gap: 10px; /* Add some space between buttons */
+  margin-top: 10px; /* Add some space above the buttons */
+}
+.video-btn{
+  background-color: var(--main-btn-bg-color); /* Use the main button background color */
+  color: var(--main-text-color); /* Use the main text color */
+  border: none; /* Remove default button border */
+  padding: 8px 12px; /* Add some padding for better appearance */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  font-size: 16px; /* Set a reasonable font size */
+}
+.video-btn:hover {
+  background-color: var(--main-text-color); /* Swap background and text colors on hover */
+  color: var(--main-bg-color);  /* Swap background and text colors on hover */
+}
+.video-btn:active {
+  background-color: var(--main-text-color); /* Keep the hover colors when the button is active */
+  color: var(--main-bg-color); /* Keep the hover colors when the button is active */
+  transform: scale(0.95); /* Slightly shrink the button to indicate it's being pressed */
+}
 /* Footer styling */
 footer {
-  background-color: var(--main-bg-color);
+  background-color: var(--main-bg-color);  
   color: var(--main-text-color);
   text-align: center;
   padding: 10px 0;

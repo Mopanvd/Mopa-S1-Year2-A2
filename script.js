@@ -137,13 +137,33 @@ function animateAudioBackground() {
   const highFreq = frequencyData.slice(bandSize * 2).reduce((sum, value) => sum + value, 0) / bandSize;
   
   // Map frequency values (0-255) to RGB values (0-255)
-  const red = Math.round(lowFreq);
-  const green = Math.round(midFreq);
-  const blue = Math.round(highFreq);
+  const blue = Math.min(255, Math.round(lowFreq * 1.4));
+  const green = Math.min(255, Math.round(midFreq * 1.7));
+  const red = Math.min(255, Math.round(highFreq * 2.2));
   
   document.body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
 
   animationId = requestAnimationFrame(animateAudioBackground);
+  // Adjusted color mapping to enhance visual effect based on frequency intensity
+} 
+
+
+function changeVideo(newVideoSrc) { // Function to change video source and update play/pause button state
+    const videoPlayer = document.getElementById('custom-video-player');
+    const playPauseImg = document.getElementById('play-pause-img');
+    
+    // Change video source to new video URL
+    videoPlayer.src = newVideoSrc;
+    
+    // Load and play the new video
+    videoPlayer.load();
+    videoPlayer.play();
+    
+    // Update play/pause button to show pause icon since new video is playing
+    // Ensure the pause icon link matches your existing project
+    if (playPauseImg) {
+        playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/pause--v1.png"; 
+    }
 }
 
 function stopAudioVisualizer() {
