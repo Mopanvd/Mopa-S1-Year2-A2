@@ -33,14 +33,14 @@ function togglePlayPause() {
     playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/play--v1.png";
   }
 }
-// 全屏切换功能
+// Added function to toggle fullscreen mode for the entire media player container
 function toggleFullScreen() {
-    // 关键点：获取整个播放器容器，而不是单纯的 video 标签
+    // Get the media player container element
     const playerContainer = document.querySelector('.media-player');
 
-    // 检查当前是否已经是全屏状态
+    // Check if currently in fullscreen mode
     if (!document.fullscreenElement && !document.webkitFullscreenElement) {
-        // 进入全屏 (兼容不同浏览器)
+        // Request fullscreen for the media player container (compatible with different browsers)
         if (playerContainer.requestFullscreen) {
             playerContainer.requestFullscreen();
         } else if (playerContainer.webkitRequestFullscreen) { /* Safari */
@@ -49,7 +49,7 @@ function toggleFullScreen() {
             playerContainer.msRequestFullscreen();
         }
     } else {
-        // 退出全屏 (兼容不同浏览器)
+        // Exit fullscreen mode
         if (document.exitFullscreen) {
             document.exitFullscreen();
         } else if (document.webkitExitFullscreen) { /* Safari */
